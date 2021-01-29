@@ -23,9 +23,15 @@ class ScanViewController: UIViewController, CBCentralManagerDelegate, CBPeripher
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var myPeripherals = [Peripheral]()
-    var isScan = true
-    
+    var isScanning = true
     var centralManager: CBCentralManager!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        centralManager = CBCentralManager(delegate: self, queue: nil)
+        scanButton.layer.cornerRadius = 7
+    }
+    
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == CBManagerState.poweredOn {
@@ -64,34 +70,39 @@ class ScanViewController: UIViewController, CBCentralManagerDelegate, CBPeripher
     }
     
     
+    private func configsanButton(color: UIColor, text: String, isOn: Bool) {
+        scanButton.backgroundColor = color
+        scanButton.setTitle(text, for: UIControl.State.normal)
+        activityIndicator.isHidden = isOn
+        scanButton.pulsate()
+    }
+    
     @IBAction func bleScan(_ sender: Any) {
-        if isScan {
-            print("scan on")
-            centralManager.scanForPeripherals(withServices: nil, options: nil)
-            isScan = false
-            scanButton.backgroundColor = .green
-           // scanButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
-            activityIndicator.isHidden = false
-            scanButton.setTitle("Scanning...", for: UIControl.State.normal)
-            scanButton.pulsate()
+        if centralManager.state == CBManagerState.poweredOn {
+            if isScanning {
+                print("scan on")
+                centralManager.scanForPeripherals(withServices: nil, options: nil)
+                isScanning = false
+                configsanButton(color: .green, text: "Scanning", isOn: false)
             
+            } else {
+                print("scan off")
+                centralManager.stopScan()
+                configsanButton(color: .white, text: "Scan", isOn: true)
+                isScanning = true
+            }
         } else {
-            print("scan off")
-            centralManager.stopScan()
-            isScan = true
-            scanButton.backgroundColor = .white
-            activityIndicator.isHidden = true
-          //  scanButton.setTitleColor(UIColor.systemBlue, for: UIControl.State.normal)
-            scanButton.setTitle("Scan", for: UIControl.State.normal)
-            scanButton.pulsate()
+            alertBluetoothDisabled()
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        centralManager = CBCentralManager(delegate: self, queue: nil)
-        scanButton.layer.cornerRadius = 7
+    private func alertBluetoothDisabled() {
+        let alertVc = UIAlertController(title: "INFO", message: "Please activate your bluetooth to start scanning", preferredStyle: .alert)
+        alertVc.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVc, animated: true, completion: nil)
     }
+    
+   
 
 }
 

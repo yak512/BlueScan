@@ -13,11 +13,25 @@ class DeviceViewController: UIViewController {
     
     @IBOutlet weak var deviceNameLabel: UILabel!
     
+    @IBOutlet weak var deviceNumberLabel: UILabel!
+    
+    @IBOutlet weak var deviceIdentifierUUIDLabel: UILabel!
+    
+    @IBOutlet weak var deviceRSSILabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        deviceNameLabel.text = myPeripheral.name
+        configureDeviceInfo()
     }
     
+    private func configureDeviceInfo() {
+        deviceNameLabel.text = myPeripheral.name
+        print(myPeripheral.identifier)
+        deviceIdentifierUUIDLabel.text = "\(myPeripheral.identifier)"
+        deviceNumberLabel.text = "\(myPeripheral.id+1)"
+        deviceRSSILabel.text = "\(myPeripheral.rssi)"
+        
+    }
     
     
 
