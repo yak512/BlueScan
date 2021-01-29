@@ -9,6 +9,7 @@ import UIKit
 
 class DeviceTableViewCell : UITableViewCell {
     
+    // MARK: - Outlets
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var deviceNameLabel: UILabel!
     
@@ -18,7 +19,7 @@ class DeviceTableViewCell : UITableViewCell {
     }
     
     func configure(name: String, id: Int) {
-        deviceNameLabel.text = "Device N°\(id+1):    " + name 
+        deviceNameLabel.text = "Device N°\(id+1): " + name 
     }
     
     fileprivate func addGraphic() {

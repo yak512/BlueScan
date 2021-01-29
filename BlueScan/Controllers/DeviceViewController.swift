@@ -9,16 +9,16 @@ import UIKit
 
 class DeviceViewController: UIViewController {
 
-    var myPeripheral: Peripheral!
-    
+    // MARK: - Outlets
     @IBOutlet weak var deviceNameLabel: UILabel!
-    
     @IBOutlet weak var deviceNumberLabel: UILabel!
-    
     @IBOutlet weak var deviceIdentifierUUIDLabel: UILabel!
-    
     @IBOutlet weak var deviceRSSILabel: UILabel!
     
+    // MARK: - Properties
+    var myPeripheral: Peripheral!
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDeviceInfo()
