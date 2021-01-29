@@ -15,6 +15,8 @@
 		7413691E25C355F000EE3885 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7413691C25C355F000EE3885 /* LaunchScreen.storyboard */; };
 		74DC511525C40FA10073DC4A /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC511425C40FA10073DC4A /* DeviceTableViewCell.swift */; };
 		74DC511925C4219D0073DC4A /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC511825C4219D0073DC4A /* DeviceViewController.swift */; };
+		74DC512625C465DE0073DC4A /* UIbuttonExtonsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC512525C465DE0073DC4A /* UIbuttonExtonsion.swift */; };
+		74DC512925C4664B0073DC4A /* Peripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC512825C4664B0073DC4A /* Peripheral.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		7413691F25C355F000EE3885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74DC511425C40FA10073DC4A /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
 		74DC511825C4219D0073DC4A /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
+		74DC512525C465DE0073DC4A /* UIbuttonExtonsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIbuttonExtonsion.swift; sourceTree = "<group>"; };
+		74DC512825C4664B0073DC4A /* Peripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peripheral.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +64,51 @@
 		7413691025C355EF00EE3885 /* BlueScan */ = {
 			isa = PBXGroup;
 			children = (
-				7413691125C355EF00EE3885 /* AppDelegate.swift */,
-				7413691325C355EF00EE3885 /* SceneDelegate.swift */,
-				7413691525C355EF00EE3885 /* ScanViewController.swift */,
-				74DC511825C4219D0073DC4A /* DeviceViewController.swift */,
-				74DC511425C40FA10073DC4A /* DeviceTableViewCell.swift */,
-				7413691725C355EF00EE3885 /* Main.storyboard */,
-				7413691A25C355F000EE3885 /* Assets.xcassets */,
-				7413691C25C355F000EE3885 /* LaunchScreen.storyboard */,
-				7413691F25C355F000EE3885 /* Info.plist */,
+				74DC512E25C4670F0073DC4A /* Model */,
+				74DC512B25C466720073DC4A /* Controllers */,
+				74DC512D25C466F70073DC4A /* View */,
+				74DC512F25C467250073DC4A /* SupportingFiles */,
 			);
 			path = BlueScan;
+			sourceTree = "<group>";
+		};
+		74DC512B25C466720073DC4A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7413691525C355EF00EE3885 /* ScanViewController.swift */,
+				74DC511825C4219D0073DC4A /* DeviceViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		74DC512D25C466F70073DC4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74DC511425C40FA10073DC4A /* DeviceTableViewCell.swift */,
+				74DC512525C465DE0073DC4A /* UIbuttonExtonsion.swift */,
+				7413691C25C355F000EE3885 /* LaunchScreen.storyboard */,
+				7413691725C355EF00EE3885 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		74DC512E25C4670F0073DC4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74DC512825C4664B0073DC4A /* Peripheral.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74DC512F25C467250073DC4A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7413691325C355EF00EE3885 /* SceneDelegate.swift */,
+				7413691A25C355F000EE3885 /* Assets.xcassets */,
+				7413691125C355EF00EE3885 /* AppDelegate.swift */,
+				7413691F25C355F000EE3885 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +182,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7413691625C355EF00EE3885 /* ScanViewController.swift in Sources */,
+				74DC512925C4664B0073DC4A /* Peripheral.swift in Sources */,
+				74DC512625C465DE0073DC4A /* UIbuttonExtonsion.swift in Sources */,
 				7413691225C355EF00EE3885 /* AppDelegate.swift in Sources */,
 				74DC511925C4219D0073DC4A /* DeviceViewController.swift in Sources */,
 				7413691425C355EF00EE3885 /* SceneDelegate.swift in Sources */,
@@ -224,7 +264,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = "13.0 14.0";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -279,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = "13.0 14.0";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -296,7 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U827D84ZM8;
-				INFOPLIST_FILE = BlueScan/Info.plist;
+				INFOPLIST_FILE = BlueScan/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +355,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U827D84ZM8;
-				INFOPLIST_FILE = BlueScan/Info.plist;
+				INFOPLIST_FILE = BlueScan/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
