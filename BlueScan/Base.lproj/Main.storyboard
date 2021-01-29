@@ -4,29 +4,179 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Scan View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BlueScan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ScanViewController" customModule="BlueScan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="h9D-Wf-ndD">
-                                <rect key="frame" x="148" y="340" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a6H-fR-Z4A">
+                                <rect key="frame" x="0.0" y="95" width="414" height="561"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="a6H-fR-Z4A" secondAttribute="height" multiplier="138:187" id="oBo-kq-PAU"/>
+                                </constraints>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemBlueColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeviceCell" rowHeight="105" id="xMt-iz-hOa" customClass="DeviceTableViewCell" customModule="BlueScan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="105"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xMt-iz-hOa" id="7En-iu-fQQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BK1-9K-Qcc">
+                                                    <rect key="frame" x="25" y="12" width="364" height="82"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khC-io-fqf">
+                                                            <rect key="frame" x="10" y="24" width="344" height="33"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="khC-io-fqf" secondAttribute="height" multiplier="364:33" id="3TJ-ZE-FuU"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="khC-io-fqf" secondAttribute="trailing" constant="10" id="Ezk-q9-vSx"/>
+                                                        <constraint firstAttribute="bottom" secondItem="khC-io-fqf" secondAttribute="bottom" constant="25" id="FuO-mY-TXp"/>
+                                                        <constraint firstItem="khC-io-fqf" firstAttribute="top" secondItem="BK1-9K-Qcc" secondAttribute="top" constant="24" id="fWb-eg-AVn"/>
+                                                        <constraint firstItem="khC-io-fqf" firstAttribute="leading" secondItem="BK1-9K-Qcc" secondAttribute="leading" constant="10" id="jDp-dP-Fbm"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BK1-9K-Qcc" secondAttribute="trailing" constant="5" id="JUv-ZK-9NC"/>
+                                                <constraint firstItem="BK1-9K-Qcc" firstAttribute="leading" secondItem="7En-iu-fQQ" secondAttribute="leadingMargin" constant="5" id="eE8-Ut-ZZq"/>
+                                                <constraint firstItem="BK1-9K-Qcc" firstAttribute="top" secondItem="7En-iu-fQQ" secondAttribute="topMargin" constant="1" id="pag-1b-lJk"/>
+                                                <constraint firstItem="BK1-9K-Qcc" firstAttribute="bottom" secondItem="7En-iu-fQQ" secondAttribute="bottomMargin" id="t2j-C6-iJz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellView" destination="BK1-9K-Qcc" id="Ldj-eW-pwI"/>
+                                            <outlet property="deviceNameLabel" destination="khC-io-fqf" id="DGq-Iq-7BU"/>
+                                            <segue destination="ytu-hb-PLS" kind="show" identifier="segueToDetail" id="u36-yv-kGJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="eGE-OH-fLm"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="lEk-TZ-hcr"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ByH-xb-A6T">
+                                <rect key="frame" x="107" y="746" width="200" height="75"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ByH-xb-A6T" secondAttribute="height" multiplier="8:3" id="0sg-b2-8Eb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Scan"/>
+                                <connections>
+                                    <action selector="bleScan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fHS-QF-dYb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrn-Mg-xEp">
+                                <rect key="frame" x="107" y="699.5" width="200" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue Scan" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz6-VX-ybX">
+                                <rect key="frame" x="113" y="54" width="188" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pz6-VX-ybX" secondAttribute="height" multiplier="94:15" id="rri-Bb-Sv6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ltc-CQ-Yv3">
+                                <rect key="frame" x="188.5" y="842" width="37" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ltc-CQ-Yv3" secondAttribute="height" multiplier="37:20" id="i1D-Vs-Byq"/>
+                                </constraints>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstItem="ByH-xb-A6T" firstAttribute="top" secondItem="qrn-Mg-xEp" secondAttribute="bottom" constant="26" id="0Ym-bp-Bga"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ByH-xb-A6T" secondAttribute="bottom" constant="41" id="BuS-Mg-cBQ"/>
+                            <constraint firstItem="ltc-CQ-Yv3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VFo-tM-nc6"/>
+                            <constraint firstItem="qrn-Mg-xEp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="WWG-SO-Ge9"/>
+                            <constraint firstItem="pz6-VX-ybX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Wya-w0-s0G"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ByH-xb-A6T" secondAttribute="trailing" constant="107" id="Zgz-qU-jYO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pz6-VX-ybX" secondAttribute="trailing" constant="113" id="gAQ-hv-2sg"/>
+                            <constraint firstItem="ltc-CQ-Yv3" firstAttribute="top" secondItem="ByH-xb-A6T" secondAttribute="bottom" constant="21" id="irW-Dm-zeB"/>
+                            <constraint firstItem="a6H-fR-Z4A" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="k2Y-V5-7Zu"/>
+                            <constraint firstItem="ByH-xb-A6T" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="k4P-CK-lEs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qrn-Mg-xEp" secondAttribute="trailing" constant="107" id="llx-Ye-Rhg"/>
+                            <constraint firstItem="a6H-fR-Z4A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nPq-Ox-a4s"/>
+                            <constraint firstItem="pz6-VX-ybX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="sMM-ai-0pn"/>
+                            <constraint firstItem="a6H-fR-Z4A" firstAttribute="top" secondItem="pz6-VX-ybX" secondAttribute="bottom" constant="11" id="yFa-lG-EmJ"/>
+                            <constraint firstItem="ByH-xb-A6T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zld-uU-FpS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ltc-CQ-Yv3" id="CYr-Tj-nRd"/>
+                        <outlet property="isBluetoothOn" destination="qrn-Mg-xEp" id="P1m-ZV-7Df"/>
+                        <outlet property="scanButton" destination="ByH-xb-A6T" id="EIW-ag-2wT"/>
+                        <outlet property="tableView" destination="a6H-fR-Z4A" id="PRn-Lb-f7N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="52"/>
+            <point key="canvasLocation" x="-197.10144927536234" y="51.5625"/>
+        </scene>
+        <!--Device View Controller-->
+        <scene sceneID="6vj-pL-L5o">
+            <objects>
+                <viewController id="ytu-hb-PLS" customClass="DeviceViewController" customModule="BlueScan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zGC-i2-PYG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PG5-NO-Cq5">
+                                <rect key="frame" x="186" y="81" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yoB-9V-yoA"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VPW-a4-pM6"/>
+                    <connections>
+                        <outlet property="deviceNameLabel" destination="PG5-NO-Cq5" id="Kme-Ii-WQk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NSf-j0-alS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="52"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

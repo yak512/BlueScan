@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		7413691225C355EF00EE3885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7413691125C355EF00EE3885 /* AppDelegate.swift */; };
 		7413691425C355EF00EE3885 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7413691325C355EF00EE3885 /* SceneDelegate.swift */; };
-		7413691625C355EF00EE3885 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7413691525C355EF00EE3885 /* ViewController.swift */; };
+		7413691625C355EF00EE3885 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7413691525C355EF00EE3885 /* ScanViewController.swift */; };
 		7413691925C355EF00EE3885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7413691725C355EF00EE3885 /* Main.storyboard */; };
 		7413691B25C355F000EE3885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7413691A25C355F000EE3885 /* Assets.xcassets */; };
 		7413691E25C355F000EE3885 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7413691C25C355F000EE3885 /* LaunchScreen.storyboard */; };
+		74DC511525C40FA10073DC4A /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC511425C40FA10073DC4A /* DeviceTableViewCell.swift */; };
+		74DC511925C4219D0073DC4A /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DC511825C4219D0073DC4A /* DeviceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7413690E25C355EF00EE3885 /* BlueScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7413691125C355EF00EE3885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7413691325C355EF00EE3885 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7413691525C355EF00EE3885 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7413691525C355EF00EE3885 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		7413691825C355EF00EE3885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7413691A25C355F000EE3885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7413691D25C355F000EE3885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7413691F25C355F000EE3885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74DC511425C40FA10073DC4A /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
+		74DC511825C4219D0073DC4A /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				7413691125C355EF00EE3885 /* AppDelegate.swift */,
 				7413691325C355EF00EE3885 /* SceneDelegate.swift */,
-				7413691525C355EF00EE3885 /* ViewController.swift */,
+				7413691525C355EF00EE3885 /* ScanViewController.swift */,
+				74DC511825C4219D0073DC4A /* DeviceViewController.swift */,
+				74DC511425C40FA10073DC4A /* DeviceTableViewCell.swift */,
 				7413691725C355EF00EE3885 /* Main.storyboard */,
 				7413691A25C355F000EE3885 /* Assets.xcassets */,
 				7413691C25C355F000EE3885 /* LaunchScreen.storyboard */,
@@ -137,9 +143,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7413691625C355EF00EE3885 /* ViewController.swift in Sources */,
+				7413691625C355EF00EE3885 /* ScanViewController.swift in Sources */,
 				7413691225C355EF00EE3885 /* AppDelegate.swift in Sources */,
+				74DC511925C4219D0073DC4A /* DeviceViewController.swift in Sources */,
 				7413691425C355EF00EE3885 /* SceneDelegate.swift in Sources */,
+				74DC511525C40FA10073DC4A /* DeviceTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
