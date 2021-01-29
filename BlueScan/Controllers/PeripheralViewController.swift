@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DeviceViewController: UIViewController {
+class PeripheralInfoViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var deviceNameLabel: UILabel!

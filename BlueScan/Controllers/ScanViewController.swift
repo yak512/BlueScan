@@ -134,7 +134,7 @@ extension ScanViewController: UITableViewDataSource, UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow {
             if segue.identifier == "segueToDetail" {
-                let detailVC = segue.destination as! DeviceViewController
+                let detailVC = segue.destination as! PeripheralInfoViewController
                 detailVC.myPeripheral = myPeripherals[indexPath.row]
             }
         }
